@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
+	<center>
+		<VBox prefHeight="200.0" prefWidth="67.0" BorderPane.alignment="CENTER">
+			<children>
+				<TextField fx:id="varX" promptText="type a number" />
+	            <TextField fx:id="varY" promptText="type another number" />
+	            <Button mnemonicParsing="false" onAction="#onCalc" text="Calculate +" />
+	            <Label fx:id="resultLabel" prefHeight="17.0" prefWidth="298.0" text="Result:" />
+	           <!-- -->
+			</children>
+		</VBox>
+	</center>
+
+</BorderPane>
