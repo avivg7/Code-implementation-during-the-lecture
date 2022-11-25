@@ -1,18 +1,23 @@
+import java.util.Observable;
+import java.util.Observer;
+
+import controller.*;
+import view.*;
+import model.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-		View v = new MyView();
 		Model m = new MyModel();
-		Controller c = new MyController(v,m);
+		View v = new MyView();
 		
-		((MyView)v).addObserver((MyController)c);
-		((MyModel)m).addObserver((MyController)c);
+		Controller c = new MyController(v, m);
 		
-		String useRequest = "upper-case-request";
-		v.start(useRequest);
-	
+		((Observable)v).addObserver((Observer)c);
+		((Observable)m).addObserver((Observer)c);
+		
+		v.start("upper-case-request");
+
 	}
 
 }
