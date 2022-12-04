@@ -3,9 +3,8 @@ import java.util.concurrent.*;
 
 public class MyActiveModel implements Model {
 	
-	/// warning! Race condition may occur!
 	
-	volatile StringBuilder str;
+	StringBuffer str;
 	volatile boolean stop = false;
 	BlockingQueue<Runnable> dispatchQueue = new LinkedBlockingQueue<Runnable>();
 	
@@ -26,7 +25,7 @@ public class MyActiveModel implements Model {
 	@Override
 	public void generateString() throws InterruptedException {
 		dispatchQueue.put( () -> { // run () -> Runnable
-				str = new StringBuilder("!dlroW olleH");
+				str = new StringBuffer("!dlroW olleH");
 				System.out.println("The string has been initialized with: " + str.toString());				
 		});
 	}
