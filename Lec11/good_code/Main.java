@@ -29,9 +29,9 @@ public class Main {
 		
 		for (int j = 0; j < a.length; j++) {
 			for (int k = 0; k < a.length; k++) {
-				r = b[k][j];
+				r = a[k][j];
 				for (int i = 0; i < a.length; i++) {
-					c[k][i] += a[j][i] * r;
+					c[k][i] += b[j][i] * r;
 				}
 			}
 		}
