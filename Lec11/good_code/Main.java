@@ -27,11 +27,11 @@ public class Main {
 		long time = System.currentTimeMillis();
 		
 		
-		for (int j = 0; j < a.length; j++) {
-			for (int k = 0; k < a.length; k++) {
-				r = a[k][j];
-				for (int i = 0; i < a.length; i++) {
-					c[k][i] += b[j][i] * r;
+		for (int k = 0; k < a.length; k++) {
+			for (int i = 0; i < a.length; i++) {
+				r = a[i][k];
+				for (int j = 0; j < a.length; j++) {
+					c[i][j] += b[k][j] * r;
 				}
 			}
 		}
